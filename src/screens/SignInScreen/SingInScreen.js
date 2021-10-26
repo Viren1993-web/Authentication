@@ -7,9 +7,10 @@ import {
   useWindowDimensions,
   ScrollView,
 } from 'react-native';
-import Logo from '../../assets/images/Logo_1.png';
-import CustomInput from '../components/CustomInput/CustomInput';
-import CustomButton from '../components/CustomButton/CustomButton';
+import Logo from '../../../assets/images/Logo_1.png';
+import CustomInput from '../../components/CustomInput/CustomInput';
+import CustomButton from '../../components/CustomButton/CustomButton';
+import SocialSignInButton from '../../components/SocialSignInButton';
 const SingInScreen = () => {
   const {height} = useWindowDimensions();
   const [username, setUsername] = useState('');
@@ -20,16 +21,6 @@ const SingInScreen = () => {
   const onForgotPasswordPressed = () => {
     console.warn('onForgotPasswordPressed');
   };
-  const onSignInFacebook = () => {
-    console.warn('onForgotPasswordPressed');
-  };
-  const onSignInGoogle = () => {
-    console.warn('onForgotPasswordPressed');
-  };
-  const onSignInApple = () => {
-    console.warn('onForgotPasswordPressed');
-  };
-
   const onSignUpPress = () => {};
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -56,24 +47,7 @@ const SingInScreen = () => {
           onPress={onForgotPasswordPressed}
           type="TERTIARY"
         />
-        <CustomButton
-          text="Sign In with Facebook"
-          onPress={onSignInFacebook}
-          bgColor="#E7EAF4"
-          fgColor="#4765A9"
-        />
-        <CustomButton
-          text="Sign In with Google"
-          onPress={onSignInGoogle}
-          bgColor="#FAE9EA"
-          fgColor="#DD4D44"
-        />
-        <CustomButton
-          text="Sign In with Apple"
-          onPress={onSignInApple}
-          bgColor="#e3e3e3"
-          fgColor="#363636"
-        />
+        <SocialSignInButton />
         <CustomButton
           text="Don't have an account? Create one"
           onPress={onSignUpPress}
